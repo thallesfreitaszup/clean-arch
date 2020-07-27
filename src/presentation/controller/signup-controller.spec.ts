@@ -46,6 +46,7 @@ describe('SignUp Controller', () => {
 
     expect(result.statusCode).toBe(400)
   })
+
   test('Should return 200 if email is valid', async() => {
     const emailValidator = new EmailValidatorStub()
     jest.spyOn(emailValidator, 'isValid')
