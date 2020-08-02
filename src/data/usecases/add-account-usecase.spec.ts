@@ -4,7 +4,7 @@ import { AccountModel } from '../../domain/account/model/account-model'
 import { AddAccountRepository } from '../repository/add-account-repository'
 import { AddAccountRequest } from './add-account-request'
 class EncryptorSub implements Encryptor {
-  encrypt = (password: string) => {
+  encrypt = async(password: string) => {
     return 'hashedPassword'
   }
 }

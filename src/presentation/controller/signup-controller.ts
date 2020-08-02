@@ -29,7 +29,7 @@ export class SignUpController implements Controller {
     if (error.length) {
       return badRequest(error)
     } else {
-      await this.addAccountUsecase.execute(new AddAccountRequest(request['name'], request['password'], request['.email']))
+      await this.addAccountUsecase.execute(new AddAccountRequest(request['name'], request['email'], request['password']))
       return {
         statusCode: 200
       }

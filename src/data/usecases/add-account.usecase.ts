@@ -10,6 +10,7 @@ export class AddAccountUsecaseImpl implements AddAccountUseCase {
   ) {
   }
   async execute(account: AddAccountRequest): Promise<AccountModel> {
+    console.log(account)
     const hashedPassword = await this.encryptor.encrypt(account.password)
     await this.repository.save({ ...account, password: hashedPassword })
     return Promise.resolve(account)
